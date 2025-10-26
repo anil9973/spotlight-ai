@@ -1,0 +1,146 @@
+top-header-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.2em;
+	box-shadow: var(--card);
+
+	background-color: light-dark(white, hsl(0, 0%, 16%));
+
+	& span {
+		margin-inline: auto;
+	}
+}
+
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+	width: 100%;
+	padding: 0.5em;
+	border-radius: 0.5em;
+	border: var(--border);
+}
+
+.flex {
+	display: flex;
+	column-gap: 0.5em;
+	justify-content: space-between;
+}
+
+.border-box {
+	padding: 0.4em;
+	border-radius: 0.4em;
+	border: var(--border);
+}
+
+button[type="submit"] {
+	border: none;
+	display: block;
+	width: 60%;
+	padding-block: 0.4em;
+	margin-inline: auto;
+	margin-block: 0.5em;
+	color: #fff;
+	border-radius: 0.5em;
+	box-shadow: var(--card);
+	background-image: linear-gradient(45deg, rgb(0, 89, 255), magenta);
+	text-align: center;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+@scope (user-onboard-form) {
+	:scope {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.8em;
+		padding: 0.5em;
+	}
+
+	div.core-interests {
+		padding: 0.3em;
+		border-radius: 0.4em;
+		border: var(--border);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4em;
+
+		& input {
+			width: unset;
+			min-width: 10ch;
+			field-sizing: content;
+			border: none;
+			padding: 4px;
+		}
+	}
+
+	ul.chip-list {
+		padding-left: 0;
+		margin-block: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4em;
+
+		& li {
+			display: inline-flex;
+			align-items: center;
+			column-gap: 2px;
+			font-size: 0.75rem;
+			padding-inline: 0.4em;
+			overflow-x: hidden;
+			background-color: light-dark(whitesmoke, hsl(0, 0%, 28%));
+			border-radius: 1em;
+
+			& svg {
+				height: 1.1em;
+			}
+		}
+	}
+}
+
+/* switch */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 55px;
+	height: 25px;
+
+	& input {
+		opacity: 0;
+
+		&:checked + .slider {
+			background-color: limegreen;
+		}
+
+		&:focus + .slider {
+			box-shadow: 0 0 1px limegreen;
+		}
+
+		&:checked + .slider:before {
+			translate: 24px;
+		}
+	}
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	inset: 0;
+	background-color: #ccc;
+	transition: 0.4s;
+	border-radius: 34px;
+
+	&:before {
+		position: absolute;
+		content: "";
+		width: 24px;
+		height: 21px;
+		left: 4px;
+		bottom: 2px;
+		background-color: white;
+		transition: 0.4s;
+		border-radius: 50%;
+	}
+}

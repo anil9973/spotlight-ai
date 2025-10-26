@@ -1,0 +1,43 @@
+:host {
+	color-scheme: light dark;
+	--card: 0 1px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+comment-box {
+	position: absolute;
+	z-index: 100;
+	&:focus-within textarea {
+		display: block;
+	}
+}
+
+textarea {
+	display: none;
+	field-sizing: content;
+	min-width: 16ch;
+	left: -150%;
+	top: 80%;
+	position: absolute;
+	box-shadow: var(--card);
+	border-radius: 4px;
+}
+
+svg {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+
+	&.comment-plus path {
+		fill: lime;
+		d: path(
+			"M 9 22 A 1 1 0 0 1 8 21 V 18 H 4 A 2 2 0 0 1 2 16 V 4 C 2 2.89 2.9 2 4 2 H 20 A 2 2 0 0 1 22 4 V 16 A 2 2 0 0 1 20 18 H 13.9 L 10.2 21.71 C 10 21.9 9.75 22 9.5 22 V 22 H 9 M 10 16 V 19.08 L 13.08 16 H 20 V 4 H 4 V 16 H 10 M 11 6 H 13 V 9 H 16 V 11 H 13 V 14 H 11 V 11 H 8 V 9 H 11 V 6 Z"
+		);
+	}
+
+	&.comment-text path {
+		fill: orange;
+		d: path(
+			"M 9 22 A 1 1 0 0 1 8 21 V 18 H 4 A 2 2 0 0 1 2 16 V 4 C 2 2.89 2.9 2 4 2 H 20 A 2 2 0 0 1 22 4 V 16 A 2 2 0 0 1 20 18 H 13.9 L 10.2 21.71 C 10 21.9 9.75 22 9.5 22 V 22 H 9 M 5 5 V 7 H 19 V 5 H 5 M 5 9 V 11 H 13 V 9 H 5 M 5 13 V 15 H 15 V 13 H 5 Z"
+		);
+	}
+}

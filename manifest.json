@@ -1,0 +1,59 @@
+{
+	"manifest_version": 3,
+	"minimum_chrome_version": "140",
+	"offline_enabled": true,
+	"name": "SpotlightAI - AI highlights what matters to u",
+	"short_name": "SpotlightAI",
+	"description": "AI highlighter that learns your interests. Personalized Auto-highlights relevant text, images, videos, PDF. auto organize into notes",
+	"version": "0.0.1",
+	"author": "Brahmastra Techeq",
+	"icons": {
+		"128": "icon-128.png",
+		"16": "icon.png"
+	},
+
+	"action": {
+		"default_title": "SpotlightAI",
+		"default_popup": "popup/index.html"
+	},
+
+	"side_panel": {
+		"default_path": "panel/index.html"
+	},
+
+	"background": {
+		"service_worker": "background/background.js",
+		"type": "module"
+	},
+
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Alt+M",
+				"windows": "Alt+M",
+				"mac": "Alt+M",
+				"linux": "Alt+M"
+			}
+		},
+
+		"colorpot_popup": {
+			"suggested_key": {
+				"default": "Alt+H",
+				"windows": "Alt+H",
+				"mac": "Alt+H",
+				"linux": "Alt+H"
+			},
+			"description": "Highlight text"
+		}
+	},
+
+	"web_accessible_resources": [
+		{
+			"resources": ["scripts/*"],
+			"matches": ["<all_urls>"]
+		}
+	],
+
+	"permissions": ["activeTab", "contextMenus", "scripting", "sidePanel", "storage"],
+	"host_permissions": ["<all_urls>"]
+}

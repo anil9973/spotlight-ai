@@ -1,0 +1,10 @@
+build
+crx-hmr.js
+spotlight-ai.zip
+.vscode
+.TODO
+build.sh
+jsconfig.json
+biome.json
+
+

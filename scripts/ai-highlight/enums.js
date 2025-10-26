@@ -1,0 +1,3 @@
+export const BlockElemTags = new Set(["ADDRESS","ARTICLE","ASIDE","BLOCKQUOTE","DIV","DL","DD","DT","FIELDSET", "FIGCAPTION","FIGURE","FOOTER","FORM","H1","H2","H3","H4","H5","H6", "HEADER","HR","LI","MAIN","NAV","OL","P","PRE","SECTION","TABLE","UL", "THEAD","TBODY","TFOOT","TR","TH","TD","LEGEND"]);
+
+export const BlockStyles = new Set(["block", "flex", "grid", "table", "list-item", "flow-root"]);
