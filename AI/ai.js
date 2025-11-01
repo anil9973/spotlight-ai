@@ -21,7 +21,10 @@ export class AiService {
 
 	async initialize() {
 		// Create a `GenerativeModel` instance with a model that supports your use case.
-		this.model = getGenerativeModel(googleAI, { mode: InferenceMode.PREFER_ON_DEVICE });
+		this.model = getGenerativeModel(googleAI, {
+			mode: InferenceMode.PREFER_ON_DEVICE,
+			inCloudParams: { model: "gemini-2.5-flash" },
+		});
 	}
 
 	/**@returns {Promise<HighlightBlock[]>} */
